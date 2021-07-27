@@ -1,0 +1,184 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DMA Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container">
+    <div class="header">
+        <p><ccet>DMA LAB PROJECT:</ccet><br>IMAGE COLORATION USING OPENCV</p>
+        
+    </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="side">
+    <h2>Description</h2>
+    <h4>
+      <p class="paragraph">The main goal is to convert a grayscale image to colorized image that represents the semantic colors and tones of the input. In this project, this has been done by using a non-traditional approach of converting all training images from RGB channel to Lab color space. L channel is used as input to the network to train the network to predict ab channels. Then the Lab image will be converted to RGB as the output. It is based on paper ‘Colorful image colorization’ by Richard Zhang, Philip Isola, Alexei A. Efros, University of California, Berkeley.
+        </p>
+      </h4>
+    <br>
+    <br>
+    <h2>Approach</h2>
+    <h4>
+      <ul class="paragraph" style="margin-left: 50px;">
+        <li>Although colors in images are mostly unique, in some cases, the colors are predictable</li>
+        <li>For example, skies are usually blue, leaves of plants and trees are usually green, the skin of people is flesh colored, water is bluish etc.</li>
+        <li>So, color is more predictable than one thinks.</li>
+        <li>Hence, it can be guessed using deep learning.</li>
+      </ul>
+    </h4>
+    <br>
+    <br>
+
+    <h2>Sample Output</h2>
+    <h4>
+      <p class="paragraph">The following slideshow contains sample output screenshots.
+      </p>
+      </h4>
+    
+    <br>
+    <div class="img" style="height:300px;">
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 5</div>
+              <img src="1.png" style="width:100%">
+              <div class="text">Home Page</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 5</div>
+              <img src="2.png" style="width:100%">
+              <div class="text">After uploading first image</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 5</div>
+              <img src="3.png" style="width:100%">
+              <div class="text">Colorized image 1</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">4 / 5</div>
+              <img src="4.png" style="width:100%">
+              <div class="text">After uploading second image</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="numbertext">5 / 5</div>
+              <img src="5.png" style="width:100%">
+              <div class="text">Colorized image 2</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+          </div>
+
+          <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+            </script>
+            
+    </div>
+    <br>
+    <div style="height: 140px;"></div>
+    <h2>Tools Required</h2>
+    <h4>
+      <ul class="paragraph" style="margin-left: 50px;">
+        <li>Django</li>
+        <li>OpenCV</li>
+        <li>Python</li>
+        <li>Numpy</li>
+      </ul>
+    </h4>
+    <br>
+    <br>
+    <h2>Features</h2>
+    <h4>
+      <p class="paragraph">Previous methods for image colorization either:</p>
+            <ol class="paragraph" style="margin-left: 50px;">
+              <li>Relied on significant human interaction and annotation.</li>
+              <li>Produced desaturated colorization that were not “believable”.</li>
+            </ol>
+            <p class="paragraph">
+            The approach we use here relies on deep learning. A Convolutional Neural Network capable of colorizing black and white images was utilized to give wonderful results.
+            </p>
+    </h4>
+    <br>
+
+    <br>
+    <h2>Choosing the right Color Model</h2>
+    <h4>
+      <p class="paragraph">The Lab color is designed to approximate human vision, but the RGB color model is not closer to human vision. Main aim of Lab color model is to gain perceptual uniformity, because the L component is very close to the human perception of lightness. Thus, the Lab color model can be used to make accurate color balance corrections. This is done by modifying output curves in the a and b components. The Lab color model can also be used to adjust the lightness contrast using the L component. The RGB space models the output of physical devices rather than human visual perception. So, in such a model, these transformations have to be done with the help of certain blend modes in the editing application.</p>
+            
+    </h4>
+    <br>
+  </div>
+  <div class="main">
+    <br>
+    
+    <br>
+    <div class="boxtext" style="height:200px;">
+    <h2 ><i>About</i></h2>
+    <br>
+    <p >A website which gives colorized version of the input black-white image.</p>
+    
+    </div>
+    <br>
+    <br>
+    <div class="boxtext" style="height:200px;">
+    <h2><i>Project link</i></h2>
+    <br>
+    <a href="https://github.com/CO18348/Image-Coloration-Project">co18348.github.com</a>
+    </div>
+    <br>
+
+    <br>
+    <div class="boxtext" style="height:200px;">
+    <h2 ><i>Contributors</i></h2>
+    <p >
+      <ul class="paragraph" style="margin-left: 20px;">
+        <li>Shuchika Sharma (CO18348)</li>
+        <li>Palak Sharma (CO18335)</li>
+        <li>Rachita Munjal (CO18338)</li>
+      </ul>
+    </p>
+    
+    </div>
+  </div>
+</div>
+</body>
+</html>
