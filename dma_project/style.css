@@ -23,14 +23,14 @@ float: center;
 padding: 0 10px;
 max-width: 780px;
 font-size: 36px;
-color: #000000;
+color: #ffffff;
 font-family: 'Lucida Handwriting';
 top: 40%;
 left: 50%;
 transform: translate(-50%, -50%);
 }
 .header ccet{
-color: #000000;
+color: #ffffff;
 font-family: 'Roboto Slab', serif;
 }
 
