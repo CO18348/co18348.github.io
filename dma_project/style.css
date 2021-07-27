@@ -104,17 +104,6 @@ font-weight: bold;
 }
 
 
-.img {
-    background-image: url("1.jpg");
-    background-repeat: no-repeat;
-
-    width: 90%;
-    color: #000000;
-
-}
-
-
-
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
