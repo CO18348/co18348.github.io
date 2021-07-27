@@ -58,7 +58,7 @@ font-weight: bold;
 .row {  
     display: flex;
     flex-wrap: wrap;
-    background-color: #F5F5DC;
+    background-color: #FFFFFF;
 }
 
 .side {
