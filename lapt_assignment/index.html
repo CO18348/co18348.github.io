@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>LAPT Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <div class="header">
+        <p><b>Eigen values and Machine Learning</b></p>
+        
+    </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="side">
+    <h2>INTRODUCTION</h2>
+    <h4>
+      <p class="paragraph">
+        Eigen is a German word that means “own” or “innate”, as in belonging to the parent matrix. The value/amount by which eigen vectors are scaled is called Eigen Value. Eigenvectors are unit vectors, which means that their length or 
+          magnitude is equal to 1.0. Eigenvalues are coefficients applied to eigenvectors that give the vectors their length or magnitude. 
+          For example, a negative eigenvalue may reverse the direction of the eigenvector as part of scaling it.
+      </p>
+    </h4>
+    <br>
+    <br>
+
+    <h2>THEORY</h2>
+      <h4>
+        <p class="paragraph">
+            When a linear transformation has to be done, we need a matrix A such that it:
+        </p>
+        <ul class="paragraph" style="margin-left: 50px;">
+          <li>scales the vector</li>
+          <li>rotates the vector</li>
+        </ul>
+        <p class="paragraph" style="display:inline;">
+          We require a transformation matrix A such that T(<p style="text-decoration:overline;display:inline;">v</p>)=A<p style="text-decoration:overline;display:inline;">v</p>
+        </p>
+        <br>
+        <p class="paragraph" style="display:inline;">
+          So, when A acts on favoured vectors, it just scales them without any rotation.<br> T(<p style="text-decoration:overline;display:inline;">v</p>)= A<p style="text-decoration:overline;display:inline;">v</p>= &lambda;<p style="text-decoration:overline;display:inline;">v</p>
+        </p>
+        <br>
+        <p class="paragraph" style="display:inline;">Here, &lambda; is a scalar value. Hence, we see that A is favouring some vectors which it just scales. Such vectors are called <b>EIGEN VECTORS</b> for that Transformation, and the amount by which the scaling is done, is called <b>EIGEN VALUE</b>. So, &lambda; is an eigen value.</p>
+      </h4>
+      <br>
+      <h4>
+        <p class="paragraph rounded-lg" style="background-color: aquamarine; text-align:center;">
+          The number &lambda; is an eigenvalue of A if and only if A-&lambda;I is singular, i.e.<br>det(A-&lambda;I)=0
+        </p>
+      </h4>
+    <br>
+    <br>
+
+    <h2>CALCULATION OF EIGENVALUES AND EIGENVECTORS</h2>
+    <h4>
+      <ul class="paragraph" style="margin-left: 50px;">
+        <li>Compute determinant of A-&lambda;I</li>
+        <li>Find the roots of the polynomial by solving det(A-&lambda;I)=0. The n roots will be the n eigenvalues of A.</li>
+        <li>To find eigenvector x, solve (A-&lambda;I)x=0 for each eigenvalue &lambda;.</li>
+      </ul>
+    </h4>
+    <br>
+    <br>
+
+    <h2>APPLICATIONS</h2>
+    <h4>
+      <ul class="paragraph" style="margin-left: 50px;">
+        <li>Communication systems: Eigenvalues were earlier used to determine the theoretical limit to how much information can be
+          transmitted through a communication medium like a telephone line or through the air.</li>
+        <li>Designing bridges:
+          The natural frequency of the bridge is the eigenvalue of smallest magnitude of a system that models the bridge. </li>
+        <li>Eigendecomposition is used to decompose a matrix into eigenvectors and eigenvalues which are eventually applied in methods used 
+          in machine learning, such as in the Principal Component Analysis method or PCA.</li>
+        <li>The Google Page Rank algorithm: The largest eigenvector of the graph of the internet is how the pages are ranked.</li>
+        <li>Geology and glaciology: In geology, especially in the study of glacial till, eigenvectors and eigenvalues are used as a method 
+          by which a mass of information of a clast fabric's constituents' orientation and dip can be summarized in a 3-D space by six numbers.</li>
+      </ul>
+    </h4>
+    <br>
+    <br>
+
+    <h2>Eigenvalues for Machine Learning (Eigen Decomposition)</h2>
+    <h4>  
+      <p class="paragraph">
+        Matrix decompositions are a useful tool for reducing a matrix to their constituent parts in order to simplify a range of more complex 
+        operations.
+      </p>
+      <p class="paragraph">
+        Eigendecomposition of a matrix is a type of decomposition that involves decomposing a square matrix into a set of eigenvectors and 
+        eigenvalues, which could help in gaining valuable information about the matrix and its properties.
+      </p>
+    </h4>
+    <br>
+    <br>
+
+    <h2>CALCULATION OF EIGENDECOMPOSITION</h2>
+    <h4>
+      <ul class="paragraph" style="margin-left: 50px;">
+        <li>An iterative algorithm is used to calculate eigendecomposition of a square matrix.
+        </li>
+        <li>To decompose a matrix W in which each column represents the eigenvectors of original matrix A, 
+          and Σ represents the matrix with the associated eigenvalues on the diagonal, we may write that</li>
+      </ul>
+      <p class="paragraph rounded-lg" style="background-color: aquamarine; text-align:center;">
+        A = W Σ W<sup>-1</sup>
+      </p>
+      <p class="paragraph">The eigendecomposition is calculated on the matrix returning the eigenvalues and eigenvectors.
+        The following code is used to implement it:
+      </p>
+      
+      <p class="paragraph">The output is:</p>
+      <pre><samp>
+      [[1 2 3]
+      [4 5 6]
+      [7 8 9]]
+        
+      [  1.61168440e+01  -1.11684397e+00  -9.75918483e-16]
+        
+      [[-0.23197069 -0.78583024  0.40824829]
+      [-0.52532209 -0.08675134 -0.81649658]
+      [-0.8186735   0.61232756  0.40824829]]</samp></pre>
+    </h4>
+    <br>
+    <br>
+
+    <h2>PROPERTIES OF EIGENVALUES</h2>
+    <h4>
+      <ul class="paragraph" style="margin-left: 50px;">
+        <li>Sum of eigenvalues is the sum of elements of principal diagonal. This is called <b>TRACE</b> of a matrix.</li>
+        <li>Product of eigenvalues of a matrix is equal to its determinant.</li>
+        <li>If &lambda; is an eigenvalue of a matrix A, then 1/&lambda; is the eigenvalue of A<sup>-1</sup>.</li>
+        <li>If &lambda; is an eigenvalue of an orthogonal matrix (i.e. A<sup>-1</sup> = A<sup>T</sup>), then 1/&lambda; is also an eigen value.</li>
+        <li>Eigenvectors corresponding to eigenvalues are linearly independent.</li>
+      </ul>
+    </h4>
+    <br>
+    <br>
+
+  
+  </div>
+  <div class="main">
+    <br>
+    <br>
+    <div class="boxtext" style="height:200px;">
+      <h1><i>Submitted By:</i></h1>
+      <p>Name: Shuchika Sharma</p>
+      <p>Roll No: CO18348</p>
+    
+    </div>
+
+</div>
+</body>
+</html>
